@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
