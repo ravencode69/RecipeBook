@@ -1,9 +1,17 @@
 <!-- since we wanted list and detail display next to each other -->
 <div class="row">
   <div class="col-md-5">
-    <app-recipe-list></app-recipe-list>
+    <app-recipe-list
+      (recipeWasSelected)="selectedRecipeHere = $event"
+    ></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-detail
+      *ngIf="selectedRecipeHere; else noSelection"
+      [recipeDetailHere]="selectedRecipeHere"
+    ></app-recipe-detail>
+    <ng-template #noSelection>
+      <p>Please select a recipe item!</p>
+    </ng-template>
   </div>
 </div>
